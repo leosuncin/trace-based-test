@@ -1,0 +1,38 @@
+{
+  "name": "trace-based-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trace-based test a express app using malabi",
+  "keywords": [
+    "express",
+    "malabi"
+  ],
+  "license": "GPL-3.0",
+  "author": "Jaime Leonardo Suncin Cruz <leosuncin@gmail.com>",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsnd -r tsconfig-paths/register src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "envalid": "7.3.1",
+    "express": "4.18.2",
+    "express-async-handler": "1.2.0",
+    "express-paginate": "1.0.2",
+    "http-errors": "2.0.0",
+    "http-status-codes": "2.2.0",
+    "mongoose": "7.0.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts-strictest": "18.12.1",
+    "@types/cors": "2.8.13",
+    "@types/express": "4.17.17",
+    "@types/express-paginate": "1.0.1",
+    "@types/http-errors": "2.0.1",
+    "@types/node": "18.15.0",
+    "ts-node-dev": "2.0.0",
+    "tsconfig-paths": "4.1.2",
+    "typescript": "4.9.5"
+  }
+}
