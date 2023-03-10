@@ -1,0 +1,34 @@
+{
+  "name": "Node.js & Mongo DB",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true
+  },
+
+  "extensions": [
+    "christian-kohler.path-intellisense",
+    "coenraads.bracket-pair-colorizer",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "mikestead.dotenv",
+    "mitchdenny.ecdc",
+    "mongodb.mongodb-vscode",
+    "orta.vscode-jest",
+    "qcz.text-power-tools",
+    "rangav.vscode-thunder-client",
+    "tamj0rd2.ts-quickfixes-extension",
+    "wmaurer.change-case",
+    "xabikos.JavaScriptSnippets"
+  ],
+
+  "forwardPorts": [1080, 3000, 9001, 27017, 16686],
+
+  "postCreateCommand": "pnpm install",
+
+  "remoteUser": "node"
+}
