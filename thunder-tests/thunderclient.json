@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "0c516614-011a-485e-9aa9-ab3c648990a4",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "",
+    "name": "Health check",
+    "url": "/health",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-03-10T19:58:03.101Z",
+    "modified": "2023-03-10T19:58:33.694Z",
+    "headers": [],
+    "params": [],
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.status",
+        "action": "equal",
+        "value": "up"
+      }
+    ]
+  }
+]
