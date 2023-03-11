@@ -31,5 +31,113 @@
         "value": "up"
       }
     ]
+  },
+  {
+    "_id": "87806b39-4d85-4b36-92ad-e2bcef73f033",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "",
+    "name": "/auth/register - Create a new user",
+    "url": "/api/auth/register",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-03-11T18:38:52.834Z",
+    "modified": "2023-03-11T18:46:21.944Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"{{#string}}\",\n  \"email\": \"{{#email}}\",\n  \"password\": \"Pa$$w0rd!\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "201"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.email",
+        "action": "setto",
+        "value": "{{USER_EMAIL}}"
+      }
+    ]
+  },
+  {
+    "_id": "d880aec5-7e37-47a2-9b32-0fbd27cffb2c",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "",
+    "name": "/auth/register - Show validation errors",
+    "url": "/api/auth/register",
+    "method": "POST",
+    "sortNum": 15000,
+    "created": "2023-03-11T19:43:41.319Z",
+    "modified": "2023-03-11T20:00:54.656Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"\",\n  \"email\": \"\",\n  \"password\": \"\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "422"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "_id": "779f6a15-7b89-4e13-b663-cb6d4fb128e9",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "",
+    "name": "/auth/register - Show duplicate user error",
+    "url": "/api/auth/register",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-03-11T20:01:00.534Z",
+    "modified": "2023-03-11T20:08:45.489Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"{{#string}}\",\n  \"email\": \"{{USER_EMAIL}}\",\n  \"password\": \"Pa$$w0rd!\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "409"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.message",
+        "action": "istype",
+        "value": "string"
+      }
+    ]
   }
 ]

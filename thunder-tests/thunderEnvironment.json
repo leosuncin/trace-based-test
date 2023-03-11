@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "_id": "c07cd093-1e94-45ba-857a-017c2be2d664",
+    "name": "(Local Env)",
+    "default": false,
+    "global": true,
+    "local": true,
+    "sortNum": -1,
+    "created": "2023-03-11T19:23:41.046Z",
+    "modified": "2023-03-11T19:23:41.046Z",
+    "data": []
+  },
+  {
+    "_id": "de5b8474-63cb-4475-ac09-fb8770fb8af5",
+    "name": "ProShop",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-03-11T19:24:42.493Z",
+    "modified": "2023-03-11T19:24:42.493Z",
+    "data": [
+      {
+        "name": "USER_EMAIL",
+        "value": "johm@doe.me"
+      }
+    ]
+  }
+]

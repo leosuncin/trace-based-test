@@ -4,7 +4,15 @@
     "colName": "ProShop",
     "created": "2023-03-10T19:19:39.176Z",
     "sortNum": 10000,
-    "folders": [],
+    "folders": [
+      {
+        "_id": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
+        "name": "auth",
+        "containerId": "",
+        "created": "2023-03-10T22:34:22.096Z",
+        "sortNum": 10000
+      }
+    ],
     "settings": {
       "headers": [],
       "tests": [],
