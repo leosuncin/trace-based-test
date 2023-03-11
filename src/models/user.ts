@@ -37,7 +37,17 @@ const UserSchema = new mongoose.Schema<
       default: false,
     },
   },
-  { timestamps: true },
+  {
+    timestamps: true,
+    toJSON: {
+      transform: (document) => ({
+        id: document._id.toHexString(),
+        name: document.name,
+        email: document.email,
+        isAdmin: document.isAdmin,
+      }),
+    },
+  },
 );
 
 UserSchema.methods.matchPassword = async function (

@@ -3,6 +3,7 @@ import express from 'express';
 import paginate from 'express-paginate';
 
 import { env } from './config/env';
+import authRoutes from './controllers/auth';
 import * as db from './lib/db';
 import { handleExceptions, handleServerExit } from './lib/error';
 import { routeNotFound } from './middleware/route-not-found';
@@ -30,6 +31,8 @@ app.get('/health', (_, response) => {
     db: state,
   });
 });
+
+app.use('/api', authRoutes);
 
 app.use(routeNotFound).use(validationError).use(serverError);
 
