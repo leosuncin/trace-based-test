@@ -35,7 +35,7 @@
   {
     "_id": "87806b39-4d85-4b36-92ad-e2bcef73f033",
     "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
-    "containerId": "",
+    "containerId": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
     "name": "/auth/register - Create a new user",
     "url": "/api/auth/register",
     "method": "POST",
@@ -73,11 +73,11 @@
   {
     "_id": "d880aec5-7e37-47a2-9b32-0fbd27cffb2c",
     "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
-    "containerId": "",
+    "containerId": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
     "name": "/auth/register - Show validation errors",
     "url": "/api/auth/register",
     "method": "POST",
-    "sortNum": 15000,
+    "sortNum": 10000,
     "created": "2023-03-11T19:43:41.319Z",
     "modified": "2023-03-11T20:00:54.656Z",
     "headers": [],
@@ -105,7 +105,7 @@
   {
     "_id": "779f6a15-7b89-4e13-b663-cb6d4fb128e9",
     "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
-    "containerId": "",
+    "containerId": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
     "name": "/auth/register - Show duplicate user error",
     "url": "/api/auth/register",
     "method": "POST",

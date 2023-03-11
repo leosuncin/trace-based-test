@@ -11,4 +11,5 @@ export const env = cleanEnv(process.env, {
     default: '*',
     example: 'localhost:3000,localhost',
   }),
+  SECRET: str(),
 });

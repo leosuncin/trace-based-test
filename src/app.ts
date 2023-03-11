@@ -1,6 +1,8 @@
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import paginate from 'express-paginate';
+import session from 'express-session';
 
 import { env } from './config/env';
 import authRoutes from './controllers/auth';
@@ -15,6 +17,20 @@ const app = express();
 app
   .use(express.urlencoded({ extended: true }))
   .use(express.json())
+  .use(cookieParser(env.SECRET))
+  .use(
+    session({
+      secret: env.SECRET,
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+        signed: true,
+        sameSite: 'strict',
+        secure: env.NODE_ENV === 'production',
+      },
+    }),
+  )
   .use(paginate.middleware(10, 50))
   .use(
     cors({
