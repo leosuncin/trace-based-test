@@ -139,5 +139,119 @@
         "value": "string"
       }
     ]
+  },
+  {
+    "_id": "cb6a1c1b-b7d3-4ea8-9630-567d1d3cd0c3",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
+    "name": "/auth/login - Show incorrect email error",
+    "url": "/api/auth/login",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2023-03-11T21:36:44.592Z",
+    "modified": "2023-03-11T21:54:59.793Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{#email}}\",\n  \"password\": \"{{#string}}\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "401"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.message",
+        "action": "istype",
+        "value": "string"
+      }
+    ]
+  },
+  {
+    "_id": "2eebf26b-efd2-4dd1-aee7-bcbd0fea73e1",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
+    "name": "/auth/login - Show incorrect password error",
+    "url": "/api/auth/login",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2023-03-11T22:16:37.693Z",
+    "modified": "2023-03-11T22:20:18.176Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{USER_EMAIL}}\",\n  \"password\": \"{{#string}}\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "401"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.message",
+        "action": "istype",
+        "value": "string"
+      }
+    ]
+  },
+  {
+    "_id": "1fccfcf4-c754-4a56-867f-a5682567d015",
+    "colId": "e0816f8a-80d5-4b80-b7c3-5fdcca3cb45c",
+    "containerId": "a0378b53-9fa9-4968-ac24-9067ffd18ef8",
+    "name": "/auth/login - Login with valid credentials",
+    "url": "/api/auth/login",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2023-03-11T21:52:35.327Z",
+    "modified": "2023-03-11T22:12:12.544Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"{{USER_EMAIL}}\",\n  \"password\": \"Pa$$w0rd!\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "isjson",
+        "value": "true"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.email",
+        "action": "equal",
+        "value": "{{USER_EMAIL}}"
+      }
+    ]
   }
 ]
